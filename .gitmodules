@@ -1,0 +1,3 @@
+[submodule "tools/Grapher"]
+	path = tools/Grapher
+	url = https://github.com/Programmer-RZ/Grapher.git
