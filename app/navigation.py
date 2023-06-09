@@ -7,18 +7,11 @@ class NavigationFrame(ctk.CTkFrame):
     def __init__(self, window):
         super().__init__(window)
 
-        # images
-        self.home_image = ctk.CTkImage(
-            light_image=Image.open(os.path.abspath("../res/home.png")),
-            dark_image=Image.open(os.path.abspath("../res/home.png")),
-            size=(25, 25)
-        )
-
         # title
+
         self.title = ctk.CTkLabel(self, 
-            text="  DataTools", 
-            compound="left",
-            font=ctk.CTkFont(family="Times New Roman", size=30, weight="bold")
+            text="DataTools", 
+            font=ctk.CTkFont(family="Times New Roman", size=40, weight="bold")
         )
         self.title.grid(row=0, column=0, padx=20, pady=20)
 
@@ -28,7 +21,6 @@ class NavigationFrame(ctk.CTkFrame):
                                          fg_color = "transparent",
                                          text_color=("gray10", "gray90"), 
                                          hover_color=("gray70", "gray30"),
-                                         image=self.home_image,
                                          anchor="W",
                                          font=ctk.CTkFont(family="Times New Roman", size=20),
                                          command=lambda : self.switchto("home", window)

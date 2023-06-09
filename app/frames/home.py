@@ -5,9 +5,32 @@ class Home(ctk.CTkFrame):
     def __init__(self, window):
         super().__init__(window)
 
+        self.grid_rowconfigure(1, weight=1)
+        self.grid_columnconfigure(0, weight=1)
+        self.grid_columnconfigure(1, weight=1)
 
-        self.title = ctk.CTkLabel(self, text="DataTools", font=ctk.CTkFont(family="Times New Roman", size=50, weight="bold"))
-        self.title.grid(row=0, column=0, padx=30, pady=30, sticky="W")
 
-        self.subtitle = ctk.CTkLabel(self, text="Welcome", font=ctk.CTkFont(family="Times New Roman", size=30, slant="italic"))
-        self.subtitle.grid(row=1, column=0, padx=30, sticky="W")
+        self.title = ctk.CTkLabel(self, text="Welcome", font=ctk.CTkFont(family="Times New Roman", size=60, slant="italic"))
+        self.title.grid(row=0, column=0, padx=30, pady=30, sticky="NW")
+
+        # will add logo later
+        self.logo = ctk.CTkLabel(self, text="DataTools", font=ctk.CTkFont(family="Times New Roman", size=30, weight="bold"))
+        self.logo.grid(row=0, column=1, padx=30, pady=55, sticky="NE")
+
+
+
+        self.get_started = ctk.CTkFrame(self)
+
+        self.gslabel = ctk.CTkLabel(self.get_started, text="Get Started", font=ctk.CTkFont(size=20, weight="bold"))
+        self.gslabel.grid(row=0, column=0, padx=20, pady=20)
+
+        self.get_started.grid(row=1, column=1, padx=30, pady=30, sticky="EWNS")
+
+
+
+        self.recent = ctk.CTkFrame(self)
+
+        self.rlabel = ctk.CTkLabel(self.recent, text="Recent tools", font=ctk.CTkFont(size=20, weight="bold"))
+        self.rlabel.grid(row=0, column=0, padx=20, pady=20)
+
+        self.recent.grid(row=1, column=0, padx=30, pady=30, sticky="EWNS")
