@@ -1,2 +1,2 @@
-**home icon**
-- <a href="https://www.flaticon.com/free-icons/ui" title="ui icons">Ui icons created by NajmunNahar - Flaticon</a>
+# Home Icon
+- https://www.flaticon.com/free-icon/home-button_9073032?term=home&page=1&position=46&origin=search&related_id=9073032
