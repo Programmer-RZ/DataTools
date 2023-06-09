@@ -1,7 +1,6 @@
 import customtkinter as ctk
 
 from navigation import NavigationFrame
-
 from frames.home import Home
 
 class App(ctk.CTk):
@@ -9,6 +8,7 @@ class App(ctk.CTk):
         super().__init__()
 
         self.title("DataTools")
+        self.iconbitmap("../res/logo.ico")
 
         width = self.winfo_screenwidth() // 1.5
         height = self.winfo_screenheight() // 1.5
