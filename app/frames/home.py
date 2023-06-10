@@ -1,4 +1,3 @@
-from typing import Optional, Tuple, Union
 import customtkinter as ctk
 
 class Home(ctk.CTkFrame):
@@ -10,7 +9,7 @@ class Home(ctk.CTkFrame):
         self.grid_columnconfigure(1, weight=1)
 
 
-        self.title = ctk.CTkLabel(self, text="Welcome", font=ctk.CTkFont(family="Times New Roman", size=60, slant="italic"))
+        self.title = ctk.CTkLabel(self, text="Home", font=ctk.CTkFont(family="Times New Roman", size=60, slant="italic"))
         self.title.grid(row=0, column=0, padx=30, pady=30, sticky="NW")
 
 

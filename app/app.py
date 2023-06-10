@@ -1,7 +1,9 @@
 import customtkinter as ctk
 
 from navigation import NavigationFrame
+
 from frames.home import Home
+from frames.tools import Tools
 
 class App(ctk.CTk):
     def __init__(self):
@@ -10,8 +12,8 @@ class App(ctk.CTk):
         self.title("DataTools")
         self.iconbitmap("../res/logo.ico")
 
-        width = self.winfo_screenwidth() // 1.5
-        height = self.winfo_screenheight() // 1.5
+        width = self.winfo_screenwidth() * 0.9
+        height = self.winfo_screenheight() * 0.9
         self.geometry("%dx%d+%d+%d" % (width, height, 0, 0))
 
         self.grid_rowconfigure(0, weight=1)
@@ -20,6 +22,7 @@ class App(ctk.CTk):
 
         # frames
         self.home = Home(self)
+        self.tools = Tools(self)
 
 
         self.currentFrame = self.home

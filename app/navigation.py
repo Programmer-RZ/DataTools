@@ -6,6 +6,8 @@ class NavigationFrame(ctk.CTkFrame):
     def __init__(self, window):
         super().__init__(window)
 
+        self.window = window
+
         # logo
         # aspect ratio 1:1
         self.logo_image = ctk.CTkImage(Image.open("../res/logo.png"), size=(50, 50))
@@ -28,13 +30,29 @@ class NavigationFrame(ctk.CTkFrame):
                                          hover_color=("gray70", "gray30"),
                                          anchor="W",
                                          font=ctk.CTkFont(size=20),
-                                         command=lambda : self.switchto("home", window)
+                                         command=lambda : self.switchto("home")
         )
         self.home_button.grid(row=1, column=0, sticky="EW")
-    
-    def switchto(self, name, mainwindow):
-        if name == "home":
-            mainwindow.currentFrame = mainwindow.home
+
+        self.tools_button = ctk.CTkButton(self, height=40, border_spacing=10, 
+                                         text="Tools",
+                                         fg_color = "transparent",
+                                         text_color=("gray10", "gray90"), 
+                                         hover_color=("gray70", "gray30"),
+                                         anchor="W",
+                                         font=ctk.CTkFont(size=20),
+                                         command=lambda : self.switchto("tools")
+        )
+        self.tools_button.grid(row=2, column=0, sticky="EW")
         
-        mainwindow.currentFrame.grid(row=0, column=1, padx=10, pady=10, sticky="EWNS")
+    
+    def switchto(self, name):
+        self.window.currentFrame.grid_forget()
+
+        if name == "home":
+            self.window.currentFrame = self.window.home
+        if name == "tools":
+            self.window.currentFrame = self.window.tools
+        
+        self.window.currentFrame.grid(row=0, column=1, padx=10, pady=10, sticky="EWNS")
 
