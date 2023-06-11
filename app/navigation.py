@@ -28,7 +28,6 @@ class NavigationFrame(ctk.CTkFrame):
                                          fg_color = "transparent",
                                          text_color=("gray10", "gray90"), 
                                          hover_color=("gray70", "gray30"),
-                                         anchor="W",
                                          font=ctk.CTkFont(size=20),
                                          command=lambda : self.switchto("home")
         )
@@ -39,7 +38,6 @@ class NavigationFrame(ctk.CTkFrame):
                                          fg_color = "transparent",
                                          text_color=("gray10", "gray90"), 
                                          hover_color=("gray70", "gray30"),
-                                         anchor="W",
                                          font=ctk.CTkFont(size=20),
                                          command=lambda : self.switchto("tools")
         )
