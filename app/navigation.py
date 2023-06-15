@@ -3,21 +3,17 @@ import customtkinter as ctk
 from PIL import Image
 
 class NavigationFrame(ctk.CTkFrame):
-    def __init__(self, window):
+    def __init__(self, window, font):
         super().__init__(window)
 
         self.window = window
+        self.font = font
 
-        # logo
-        # aspect ratio 1:1
-        self.logo_image = ctk.CTkImage(Image.open("../res/logo.png"), size=(50, 50))
 
         # title
         self.title = ctk.CTkLabel(self, 
-            text=" DataTools", 
-            image=self.logo_image,
-            compound="left",
-            font=ctk.CTkFont(family="Times New Roman", size=40, weight="bold")
+            text="DataTools", 
+            font=ctk.CTkFont(self.font, size=40, weight="bold")
         )
         self.title.grid(row=0, column=0, padx=20, pady=20)
 
@@ -28,7 +24,7 @@ class NavigationFrame(ctk.CTkFrame):
                                          fg_color = "transparent",
                                          text_color=("gray10", "gray90"), 
                                          hover_color=("gray70", "gray30"),
-                                         font=ctk.CTkFont(size=20),
+                                         font=ctk.CTkFont(self.font, size=20),
                                          command=lambda : self.switchto("home")
         )
         self.home_button.grid(row=1, column=0, sticky="EW")
@@ -38,7 +34,7 @@ class NavigationFrame(ctk.CTkFrame):
                                          fg_color = "transparent",
                                          text_color=("gray10", "gray90"), 
                                          hover_color=("gray70", "gray30"),
-                                         font=ctk.CTkFont(size=20),
+                                         font=ctk.CTkFont(self.font, size=20),
                                          command=lambda : self.switchto("tools")
         )
         self.tools_button.grid(row=2, column=0, sticky="EW")

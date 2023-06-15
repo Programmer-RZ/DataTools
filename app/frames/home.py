@@ -1,15 +1,17 @@
 import customtkinter as ctk
 
 class Home(ctk.CTkFrame):
-    def __init__(self, window):
+    def __init__(self, window, font):
         super().__init__(window)
+
+        self.font = font
 
         self.grid_rowconfigure(1, weight=1)
         self.grid_columnconfigure(0, weight=1)
         self.grid_columnconfigure(1, weight=1)
 
 
-        self.title = ctk.CTkLabel(self, text="Home", font=ctk.CTkFont(family="Times New Roman", size=60, slant="italic"))
+        self.title = ctk.CTkLabel(self, text="Home", font=ctk.CTkFont(self.font, size=60, slant="italic"))
         self.title.grid(row=0, column=0, padx=30, pady=30, sticky="NW")
 
 
