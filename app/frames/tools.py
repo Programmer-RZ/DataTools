@@ -98,4 +98,5 @@ class Tools(ctk.CTkFrame):
         self.dtextbox.configure(state="disabled")
     
     def runTool(self):
-        pass
+        if self.currentTool:
+            subprocess.Popen(["python", "main.py"], cwd=f"../tools/{self.currentTool}/src")
