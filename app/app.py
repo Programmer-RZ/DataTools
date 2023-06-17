@@ -2,7 +2,6 @@ import customtkinter as ctk
 
 from navigation import NavigationFrame
 
-from frames.home import Home
 from frames.tools import Tools
 
 class App(ctk.CTk):
@@ -21,11 +20,10 @@ class App(ctk.CTk):
 
         # frames
         self.font = "Cascadia Mono"
-        self.home = Home(self, self.font)
         self.tools = Tools(self, self.font)
 
 
-        self.currentFrame = self.home
+        self.currentFrame = self.tools
         self.currentFrame.grid(row=0, column=1, padx=10, pady=10, sticky="EWNS")
 
 

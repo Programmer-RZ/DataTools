@@ -38,9 +38,6 @@ class Tools(ctk.CTkFrame):
 
         self.runbutton = ctk.CTkButton(self.details, height=40, border_spacing=10, 
                                          text="Run tool",
-                                         fg_color = "transparent",
-                                         text_color=("gray10", "gray90"), 
-                                         hover_color=("gray70", "gray30"),
                                          font=ctk.CTkFont(self.font, size=20),
                                          command=self.runTool)
         self.runbutton.grid(row=2, column=0, padx=20, pady=20, sticky="EWNS")
@@ -72,9 +69,6 @@ class Tools(ctk.CTkFrame):
                 # create temporary button
                 b = ctk.CTkButton(self.menuTools, height=40, border_spacing=10, 
                                          text=t,
-                                         fg_color = "transparent",
-                                         text_color=("gray10", "gray90"), 
-                                         hover_color=("gray70", "gray30"),
                                          font=ctk.CTkFont(self.font, size=20),
                                          command=lambda : self.setdetails(t)
                                          )
