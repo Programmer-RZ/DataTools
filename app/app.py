@@ -3,6 +3,7 @@ import customtkinter as ctk
 from navigation import NavigationFrame
 
 from frames.tools import Tools
+from frames.settings import Settings
 
 class App(ctk.CTk):
     def __init__(self):
@@ -21,6 +22,7 @@ class App(ctk.CTk):
         # frames
         self.font = "Cascadia Mono"
         self.tools = Tools(self, self.font)
+        self.settings = Settings(self, self.font)
 
 
         self.currentFrame = self.tools

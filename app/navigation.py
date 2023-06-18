@@ -28,6 +28,18 @@ class NavigationFrame(ctk.CTkFrame):
                                          command=lambda : self.switchto("tools")
         )
         self.tools_button.grid(row=2, column=0, sticky="EW")
+
+
+        self.settings_button = ctk.CTkButton(self, height=40, border_spacing=10, 
+                                         text="Settings",
+                                         fg_color = "transparent",
+                                         text_color=("gray10", "gray90"), 
+                                         hover_color=("gray70", "gray30"),
+                                         font=ctk.CTkFont(self.font, size=20),
+                                         command=lambda : self.switchto("settings")
+        )
+        self.settings_button.grid(row=3, column=0, sticky="EW")
+
         
     
     def switchto(self, name):
@@ -35,6 +47,8 @@ class NavigationFrame(ctk.CTkFrame):
 
         if name == "tools":
             self.window.currentFrame = self.window.tools
+        elif name == "settings":
+            self.window.currentFrame = self.window.settings
         
         self.window.currentFrame.grid(row=0, column=1, padx=10, pady=10, sticky="EWNS")
 
