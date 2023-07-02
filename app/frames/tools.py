@@ -62,17 +62,14 @@ class Tools(ctk.CTkFrame):
 
         # open file with all the tools name
         with open("../tools/alltools.txt", "r") as tools:
-            for row, t in enumerate(tools.readlines()):
-                # configure appropriate row
-                self.menuTools.grid_rowconfigure(row, weight=1)
-
+            for t in tools.read().split(","):
                 # create temporary button
-                b = ctk.CTkButton(self.menuTools, height=40, border_spacing=10, 
+                b = ctk.CTkButton(self.menuTools, border_spacing=10, 
                                          text=t,
                                          font=ctk.CTkFont(self.font, size=20),
                                          command=lambda : self.setdetails(t)
                                          )
-                b.grid(padx=20, pady=20, sticky="EW")
+                b.grid(pady=10, sticky="EW")
         
         self.menuTools.grid(row=1, column=0, padx=20, pady=20, sticky="EWNS")
 
