@@ -1,3 +1,9 @@
 [submodule "tools/Grapher"]
 	path = tools/Grapher
 	url = https://github.com/Programmer-RZ/Grapher.git
+[submodule "CSVGrapher"]
+	path = CSVGrapher
+	url = https://github.com/Programmer-RZ/CSVGrapher.git
+[submodule "tools/CSVGrapher"]
+	path = tools/CSVGrapher
+	url = https://github.com/Programmer-RZ/CSVGrapher.git
