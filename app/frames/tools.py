@@ -59,24 +59,23 @@ class Tools(ctk.CTkFrame):
 
         self.menuTools = ctk.CTkFrame(self.menu)
         self.menuTools.grid_columnconfigure(0, weight=1)
-
-        # open file with all the tools name
+        
+        # open alltools.txt
         with open("../tools/alltools.txt", "r") as tools:
             for t in tools.read().split(","):
-                # create temporary button
-                b = ctk.CTkButton(self.menuTools, border_spacing=10, 
+            
+                ctk.CTkButton(self.menuTools, border_spacing=10, 
                                          text=t,
                                          font=ctk.CTkFont(self.font, size=20),
-                                         command=lambda : self.setdetails(t)
-                                         )
-                b.grid(pady=10, sticky="EW")
+                                         command=lambda tool=t: self.setCurrentTool(tool)
+                                         ).grid(padx=10, pady=10, sticky="EW")
         
         self.menuTools.grid(row=1, column=0, padx=20, pady=20, sticky="EWNS")
 
 
         self.menu.grid(row=1, column=0, padx=30, pady=30, sticky="EWNS")
     
-    def setdetails(self, name):
+    def setCurrentTool(self, name):
         self.currentTool = name
 
         self.dtextbox.configure(state="normal")
